@@ -1,0 +1,10 @@
+.leftside-menu {
+  background-color: #313a46;
+  transition: all 0.25s ease-in-out;
+}
+.leftside-menu-open {
+  width: 260px;
+}
+.leftside-menu-close {
+  width: 100px;
+}

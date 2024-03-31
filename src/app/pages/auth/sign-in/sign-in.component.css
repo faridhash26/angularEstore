@@ -1,0 +1,10 @@
+.login-card-wrapper {
+  width: 400px;
+}
+.content-login-description-wrapper {
+  font-size: 12px;
+}
+.error-text-login-card {
+  font-size: 10px;
+  padding-right: 10px !important;
+}

@@ -1,0 +1,77 @@
+<div class="w-100 h-100 d-flex justify-content-center">
+  <div class="container py-5">
+    <div class="row gap-4">
+      <div class="col-7 d-flex flex-column gap-4">
+        <h4>سبد خرید</h4>
+        <div class="d-flex w-100 flex-column overflow-auto gap-2">
+          <div class="w-100" *ngFor="let item of shipinglist">
+            <a class="d-flex border rounded gap-2 px-2 align-items-center">
+              <img
+                width="114"
+                height=""
+                class="cart-item-image"
+                [src]="item.img"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="text-md">{{ item.name }}</p>
+                <div
+                  class="d-flex justify-content-between align-items-center gap-2"
+                >
+                  <p class="d-flex align-items-center gap-2">
+                    <span>قیمت</span>
+                    <span>{{ item.price * item.qty | number : "2." }}</span>
+                  </p>
+                  <div
+                    class="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <button
+                      (click)="increaseQtyItem(item.id)"
+                      class="btn btn-primary"
+                    >
+                      +
+                    </button>
+                    <div>{{ item.qty }}</div>
+                    <button
+                      (click)="decreaseQtyItem(item.id)"
+                      *ngIf="item.qty > 1"
+                      class="btn btn-primary"
+                    >
+                      -
+                    </button>
+                    <button
+                      *ngIf="item.qty < 2"
+                      class="btn btn-primary"
+                      (click)="deleteFromShipingList(item.id)"
+                    >
+                      <i class="bi bi-trash3-fill"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card border rounded py-4">
+          <div class="card-body">
+            <p class="d-flex w-100 justify-content-between px-3 py-3">
+              <span>قیمت کالاها({{ shipinglist?.length }})</span>
+              <span>{{ totalprice() | number : "2." }}</span>
+            </p>
+            <p class="d-flex w-100 justify-content-between px-3 py-3">
+              <span>جمع سبد خرید </span>
+              <span>{{ totalprice() | number : "2." }}</span>
+            </p>
+            <div class="d-flex w-full justify-content-center">
+              <a href="#" class="btn btn-primary text-white px-3 py-2">
+                تایید و تکمیل سفارش
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="w-100 h-100 align-items-center d-flex justify-content-center">
+  <div class="card border sign-up-wrapper">
+    <div
+      class="flex card-body flex-col py-4 align-items-center justify-content-center"
+    >
+      <h1 class="w-full text-center fs-4">ساخت حساب کاربری</h1>
+      <div class="w-full">
+        <form
+          [formGroup]="userSignUpForm"
+          (ngSubmit)="onSubmitSignUp()"
+          class="row g-3 gap-4 p-4"
+        >
+          <div class="col-md-12">
+            <input
+              class="form-control"
+              formControlName="username"
+              name="username"
+              type="text"
+              placeholder="نام کاربری"
+            />
+            <ng-container
+              *ngIf="
+                userSignUpForm.get('username')?.dirty &&
+                userSignUpForm.get('username')?.invalid
+              "
+            >
+              <div
+                class="text-danger error-text-sign-up pt-1"
+                *ngIf="userSignUpForm.get('username')?.errors?.['required']"
+              >
+                *نام کاربری ضروری است.
+              </div>
+            </ng-container>
+          </div>
+          <div class="col-md-12">
+            <input
+              formControlName="password"
+              name="password"
+              class="form-control"
+              type="password"
+              placeholder="رمز عبور"
+            />
+            <div
+              class="text-danger error-text-sign-up pt-1"
+              *ngIf="userSignUpForm.get('password')?.errors?.['required']"
+            >
+              *رمزعبور ضروری است.
+            </div>
+            <div
+              class="text-danger error-text-sign-up pt-1"
+              *ngIf="userSignUpForm.get('password')?.errors?.['minlength']"
+            >
+              *حداقل تعداد کاراکتر ۸ است
+            </div>
+            <div
+              class="text-danger error-text-sign-up pt-1"
+              *ngIf="userSignUpForm.get('password')?.errors?.['pattern'] && !userSignUpForm.get('password')?.errors?.['minlength'] && !userSignUpForm.get('password')?.errors?.['required']"
+            >
+              *رمز عبور باید شامل اعداد حروف بزرگ و گوچک و کاراکتر های خاص باشد
+            </div>
+          </div>
+          <div class="col-md-12">
+            <input
+              formControlName="passwordrepeat"
+              name="passwordrepeat"
+              class="form-control"
+              type="password"
+              placeholder="تکرار رمز عبور"
+            />
+            <div
+              class="text-danger error-text-sign-up pt-1"
+              *ngIf="userSignUpForm.get('password')?.errors?.['required']"
+            >
+              *تکرار رمزعبور ضروری است.
+            </div>
+          </div>
+          <button class="col-md-12 btn btn-primary">ثبت نام</button>
+        </form>
+        <div
+          class="d-flex px-4 flex-column align-items-center gap-4 content-login-description-wrapper"
+        >
+          <p>
+            حساب کاربری دارید؟
+            <a class="text-primary" [routerLink]="['/signIn']">
+              ورود به حساب کاربری</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

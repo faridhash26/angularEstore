@@ -1,0 +1,42 @@
+<header class="public-header-wrapper d-flex justify-content-center w-100">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center w-100 py-3">
+      <nav>
+        <ul class="d-flex align-items-center gap-4">
+          <li><a [routerLink]="['/']"> خانه </a></li>
+          <li><a [routerLink]="['/products']">محصولات</a></li>
+          <li><a>درباره ما</a></li>
+        </ul>
+      </nav>
+
+      <div class="d-flex align-items-center gap-4 px-4">
+        <form
+          #searchFormData="ngForm"
+          (ngSubmit)="onSubmitSearch(searchFormData)"
+          class="bd-search position-relative me-auto"
+        >
+          <div class="align-items-center input-group d-flex">
+            <input
+              name="search"
+              [(ngModel)]="search"
+              class="form-control"
+              type="search"
+              placeholder="جستجو..."
+              aria-label="Search"
+            />
+            <button
+              class="border-0 nput-group-text bg-transparent"
+              type="submit"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+        <a [routerLink]="['/signIn']">ورود / ثبت نام</a>
+        <a [routerLink]="['/shiping']" class="d-flex align-items-center gap-1">
+          <i class="bi bi-cart4"></i><span>{{ shipingQty }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
