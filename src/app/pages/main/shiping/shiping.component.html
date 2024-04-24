@@ -57,7 +57,9 @@
         <div class="card border rounded py-4">
           <div class="card-body">
             <p class="d-flex w-100 justify-content-between px-3 py-3">
-              <span>قیمت کالاها({{ shipinglist?.length }})</span>
+              <span
+                >قیمت کالاها({{ shipinglist ? shipinglist.length : 0 }})</span
+              >
               <span>{{ totalprice() | number : "2." }}</span>
             </p>
             <p class="d-flex w-100 justify-content-between px-3 py-3">

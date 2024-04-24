@@ -1,0 +1,16 @@
+.amazing-item {
+  min-width: 690px;
+  height: 257px;
+  border-radius: 8px;
+  background-color: white;
+  
+}
+.amazing-item-image-wrapper {
+  width: 200px;
+  height: 200px;
+}
+.amazing-item-image-wrapper img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}

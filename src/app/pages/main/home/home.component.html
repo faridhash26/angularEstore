@@ -1,3 +1,17 @@
-<div class="d-flex w-100 home-wrapper h-100 justify-content-center">
+<div class="d-flex w-100 home-wrapper h-100 align-items-center flex-column">
   <app-custom-carousel></app-custom-carousel>
+  <div class="w-100 d-flex flex-column amazing-offers-wrapper gap-2 py-4">
+    <div class="d-flex align-items-center">
+      <h4>شگفت‌انگیز روز</h4>
+    </div>
+    <div class="d-flex gap-3 w-100 amazing-offers">
+      <ng-container *ngFor="let item of amazingdata">
+        <app-amazing-card
+          [header]="item.title"
+          [image]="item.image"
+          [price]="item.price"
+        ></app-amazing-card>
+      </ng-container>
+    </div>
+  </div>
 </div>

@@ -1,3 +1,9 @@
 .home-wrapper {
   overflow-y: auto;
 }
+.home-wrapper .amazing-offers-wrapper {
+  background-color: red;
+}
+.home-wrapper .amazing-offers-wrapper .amazing-offers {
+  overflow-x: auto;
+}
