@@ -4,7 +4,7 @@ import { HomeComponent } from './pages/main/home/home.component';
 import { NotFoundComponent } from './pages/main/not-found/not-found.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HomeAdminComponent } from './pages/admin-dashboard/home/home.component';
-import { NotFoundAdminComponent } from './pages/admin-dashboard/not-found/not-found.component';
+
 import { SignInComponent } from './pages/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/auth/sign-up/sign-up.component';
 import { ProductsComponent } from './pages/main/products/products.component';

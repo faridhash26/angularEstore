@@ -1,5 +1,9 @@
-<div class="w-100 bg-danger d-flex">
-  <div class="carousel-container">
-    <img [src]="caruselData[currentIndex].url" alt="Carousel Image" />
-  </div>
+Copy code
+<div class="slider">
+  <img
+    [src]="images[currentSlide]"
+    class="slide"
+  />
+  <button (click)="prevSlide()">Previous</button>
+  <button (click)="nextSlide()">Next</button>
 </div>
