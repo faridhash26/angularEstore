@@ -1,6 +1,6 @@
-<div class="carousel" [@carouselAnimation]="activeIndex">
-  <div *ngFor="let item of items; let i = index" class="carousel-item">
-    <img [src]="item.image" class="carousel-image" alt="Slide" />
+<div class="carousel">
+  <div *ngFor="let item of items; let i = index" class="carousel-item" [ngClass]="{'active': i === activeIndex}">
+    <img [src]="item.image" class="carousel-image" alt="Slide">
     <div class="carousel-caption">
       <h5>{{ item.title }}</h5>
       <p>{{ item.description }}</p>

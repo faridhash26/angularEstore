@@ -2,10 +2,10 @@
   width: 100%;
 }
 .carousel {
-  height: 250px;
-  width: 100%;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 250px;
 }
 
 .carousel-item {
@@ -33,6 +33,12 @@
   background: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
+  transition: transform 0.5s ease;
+  transform: translateY(100%);
+}
+
+.carousel-item.active .carousel-caption {
+  transform: translateY(0);
 }
 
 .carousel-control {
