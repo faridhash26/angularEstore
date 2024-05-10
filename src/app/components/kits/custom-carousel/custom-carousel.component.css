@@ -1,40 +1,55 @@
-.carousel-container {
+:host {
   width: 100%;
-  height: 400px;
 }
-
-.carousel-container img {
+.carousel {
+  height: 250px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.slider {
   position: relative;
-  width: 600px;
-  height: 300px;
   overflow: hidden;
 }
 
-.slide {
+.carousel-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-image {
   width: 100%;
   height: auto;
 }
 
-button {
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+}
+
+.carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #333;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 10px 20px;
   border: none;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-button:first-child {
-  left: 10px;
+.prev {
+  left: 0;
 }
 
-button:last-child {
-  right: 10px;
+.next {
+  right: 0;
 }

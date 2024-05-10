@@ -1,9 +1,11 @@
-Copy code
-<div class="slider">
-  <img
-    [src]="images[currentSlide]"
-    class="slide"
-  />
-  <button (click)="prevSlide()">Previous</button>
-  <button (click)="nextSlide()">Next</button>
+<div class="carousel" [@carouselAnimation]="activeIndex">
+  <div *ngFor="let item of items; let i = index" class="carousel-item">
+    <img [src]="item.image" class="carousel-image" alt="Slide" />
+    <div class="carousel-caption">
+      <h5>{{ item.title }}</h5>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+  <button (click)="prev()" class="carousel-control prev">Prev</button>
+  <button (click)="next()" class="carousel-control next">Next</button>
 </div>
